@@ -1,0 +1,1 @@
+"D:\实习\vx\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-8ghautw7cbf2383e --n quickstartFunctions --r --project "D:\实习\vx\探野" --report_first --report

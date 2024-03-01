@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="title">探野</view>
+
+  <view class="top_tip">野生动物识别小程序</view>
+  <view class="image-container" style="width: 785rpx; height: 670rpx; display: block; box-sizing: border-box">  
+    <image style="position: relative; left: 6rpx; top: -12rpx; width: 737rpx; height: 655rpx; display: inline-block; box-sizing: border-box" src="{{imgSrc}}" mode="aspectFit" />
+  </view>
+  <view style="margin-top: 20rpx;"> 
+  <button bindtap="TakePhoto" class="custom-button" style="margin-bottom: 20rpx; width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">拍照</button>
+  <button bindtap="ChooseImage" class="custom-button" style="margin-bottom: 20rpx;width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">从本地选择图片</button>
+  <button bindtap="StartRecognition" class="custom-button" style="width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">开始识别</button>
+  <view class="environment" bindtap="onChangeShowEnvChoose" style="position: relative; left: 181rpx; top: -21rpx; width: 116rpx; height: 30rpx; display: block; box-sizing: border-box">Shark团队</view>
+  <view wx:if="{{isWaiting}}" style="width: 150rpx; height: 58rpx; display: block; box-sizing: border-box; position: relative; left: 180rpx; top: -109rpx; font-size: 20px">等待中...</view>
+</view>
+
+
+  
+
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+
+</view>
