@@ -1,19 +1,21 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="text" style="position: relative; left: -148rpx; top: -60rpx">欢迎您，{{userInfo.nickName}}<button bindtap="navigateToHistory" class="hyperlink-button" style="margin-left: 10rpx; position: relative; left: 335rpx; top: 30rpx; width: 206rpx; height: 53rpx; display: inline-block; box-sizing: border-box">查看历史记录</button></view>
 
-  <view class="title">探野</view>
-
-  <view class="top_tip">野生动物识别小程序</view>
-  <view class="image-container" style="width: 785rpx; height: 670rpx; display: block; box-sizing: border-box">  
+  <open-data class = "circle-avatar" type="userAvatarUrl" style="position: relative; left: -266rpx; top: -35rpx"></open-data>
+  <button bindtap="navigateToUserset" class="hyperlink-button" style="display: inline-block; box-sizing: border-box; position: relative; left: 287rpx; top: -123rpx">用户设置</button>
+  <view class="title" style="position: relative; left: 1rpx; top: -108rpx">探野</view>
+  <view class="top_tip" style="position: relative; left: 1rpx; top: -145rpx">野生动物识别小程序</view>
+  <view class="image-container" style="width: 785rpx; height: 670rpx; display: block; box-sizing: border-box; position: relative; left: -1rpx; top: -140rpx">  
     <image style="position: relative; left: 6rpx; top: -12rpx; width: 737rpx; height: 655rpx; display: inline-block; box-sizing: border-box" src="{{imgSrc}}" mode="aspectFit" />
   </view>
   <view style="margin-top: 20rpx;"> 
-  <button bindtap="TakePhoto" class="custom-button" style="margin-bottom: 20rpx; width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">拍照</button>
-  <button bindtap="ChooseImage" class="custom-button" style="margin-bottom: 20rpx;width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">从本地选择图片</button>
-  <button bindtap="StartRecognition" class="custom-button" style="width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">开始识别</button>
-  <view class="environment" bindtap="onChangeShowEnvChoose" style="position: relative; left: 181rpx; top: -21rpx; width: 116rpx; height: 30rpx; display: block; box-sizing: border-box">Shark团队</view>
+  <button bindtap="TakePhoto" class="custom-button" style="margin-bottom: 20rpx; width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 0rpx; top: -123rpx; position: relative">拍照</button>
+  <button bindtap="ChooseImage" class="custom-button" style="margin-bottom: 20rpx; width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: -1rpx; top: -112rpx; position: relative">从本地选择图片</button>
+  <button bindtap="StartRecognition" class="custom-button" style="width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: -1rpx; top: -102rpx; position: relative">开始识别</button>
+  <view class="environment" bindtap="onChangeShowEnvChoose" style="position: relative; left: 181rpx; top: -163rpx; width: 116rpx; height: 30rpx; display: block; box-sizing: border-box">Shark团队</view>
   <view wx:if="{{isWaiting}}" style="width: 150rpx; height: 58rpx; display: block; box-sizing: border-box; position: relative; left: 180rpx; top: -109rpx; font-size: 20px">等待中...</view>
-</view>
+  </view>
 
 
   

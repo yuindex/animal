@@ -1,0 +1,14 @@
+<!--pages/userLogin/userLogin.wxml-->
+<view class="container">
+
+  <view class="title">探野</view>
+  <view class="top_tip">野生动物识别小程序</view>
+  <view class="image-container" style="width: 785rpx; height: 370rpx; display: block; box-sizing: border-box">  
+    <image style="position: relative; left: 6rpx; top: -12rpx; width: 737rpx; height: 355rpx; display: inline-block; box-sizing: border-box" src="{{imgSrc}}" mode="aspectFit" />
+  </view>
+  <view style="margin-top: 20rpx;">
+    <button bindtap="userLogin" class="custom-button"  style="margin-bottom: 20rpx; position: relative; left: 0rpx; top: 34rpx">微信一键登录</button>
+  
+  <view class="environment" bindtap="onChangeShowEnvChoose" style="position: relative; display: block; box-sizing: border-box; left: 103rpx; top: 0rpx; width: 116rpx; height: 30rpx">Shark团队</view>
+  </view>
+</view>

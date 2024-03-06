@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userLogin/userLogin",
     "pages/index/index",
     "pages/getOpenId/index",
     "pages/getMiniProgramCode/index",
@@ -14,7 +15,8 @@
     "pages/sumRecordResult/index",
     "pages/cloudBackend/index",
     "pages/singleTemplate/index",
-    "pages/web/index"
+    "pages/web/index",
+    "pages/index/userHistory/userHistory"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -23,10 +25,10 @@
     "navigationBarTitleText": "探野",
     "navigationBarTextStyle": "black"
   },
-  "permission": {  
-    "scope.camera": {  
-      "desc": "你的应用需要获取相机权限以完成拍照功能"  
-    }  
+  "permission": {
+    "scope.camera": {
+      "desc": "你的应用需要获取相机权限以完成拍照功能"
+    }
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",

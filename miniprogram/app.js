@@ -11,9 +11,57 @@ App({
         //   如不填则使用默认环境（第一个创建的环境）
         // env: 'my-env-id',
         traceUser: true,
+        
       });
     }
+    
+    this.globalData = {
+      userInfo: {  
+        avatarUrl: '', // 用户头像的 URL  
+        nickname: '',  // 用户的昵称  
+        openid: '',
+        appid: '',  
+      },  
+      isLogin: false,
+    };
+    // 用户登录方法  
+    this.userLogin = function () {  
+      const app = getApp(); // 获取 App 实例  
+      wx.getUserProfile({  
+        desc: '登录显示头像和昵称信息',  
+        success(res) {  
+          if (res.userInfo) { 
+            // 将用户信息存储到全局数据中 
+            app.globalData.userInfo = res.userInfo;
+            // 将用户信息存储到本地缓存中，以便在其他页面中使用  
+            wx.setStorageSync('userInfo', app.globalData.userInfo); 
+            // 调用云函数进行登录，并传递 userInfo  
+            wx.cloud.callFunction({  
+              name: "userlogin",  
+              data: {
+                userInfo: res.userInfo,
+              },  
+              success(res) {  
+                if (res.result && res.result.openid) {  
+                  app.globalData.userInfo.openid = res.result.openid; 
+                  console.log(res.result)
+                  wx.navigateTo({  
+                    url: '/pages/index/index',  
+                  });  
+                } else {  
+                  console.error('登录失败，未获取到 openid');  
+                }  
+              },  
+              fail(err) {  
+                console.error('云函数调用失败', err);  
+              }  
+            });  
+          } else {  
+            console.error('获取用户信息失败');  
+          }  
+        }  
+      });  
+    };  
+  },  
 
-    this.globalData = {};
-  }
 });

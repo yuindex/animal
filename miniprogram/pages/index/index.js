@@ -7,7 +7,8 @@ Page({
     imgSrc: '',
     isWaiting: false,
     fileName:'',
-    FileContent:''
+    FileContent:'',
+    userInfo: null // 添加一个userInfo字段来存储用户信息
   },  
 
   ChooseImage: function() {  
@@ -93,32 +94,41 @@ Page({
       }  
     });
   },
-
-/*   uploadImageToCloud1: function() {
-    const FileContent = this.data.FileContent;
-    const fn = this.data.fileName;
-    // 触发需要等待完成的事件  
-    wx.cloud.callFunction({  
-      name: 'UploadImage',  
-      data: {  
-        fileContent: FileContent,
-        fileName: fn   
-      },  
-      success: res => {  
-        console.log('图片上传成功', res.result);
-        // 显示“等待中”  
-        this.setData({  
-        isWaiting: true  
-        });    
-        this.Recognition();  
-      },  
-      fail: err => {  
-        console.error('图片上传失败', err);  
-      }  
-    });  
-  }, */
   
   Recognition: function() {  
     
-  },  
+  },
+
+  navigateToHistory: function(){
+    wx.navigateTo({  
+      url: '/pages/index/userHistory/userHistory'
+    });  
+  },
+  onLoad: function() {  
+    // 获取应用实例  
+    const app = getApp();  
+  
+    // 从全局数据中获取 userInfo  
+    const userInfo = app.globalData.userInfo;  
+  
+    if (userInfo) {  
+      // 用户信息存在  
+      console.log('用户信息：', userInfo);  
+      this.setData({ userInfo: userInfo }); // 将用户信息设置到页面数据中  
+  
+      // 单独获取头像和昵称  
+      const avatarUrl = userInfo.avatarUrl;  
+      const nickname = userInfo.nickname;  
+  
+      // 设置到页面数据  
+      this.setData({  
+        avatarUrl: avatarUrl,  
+        nickname: nickname  
+      });  
+    } else {  
+      // 用户信息不存在时的处理逻辑  
+      console.log('用户信息不存在');  
+      // 可以选择跳转到登录页面或其他处理  
+    }  
+  },     
 })

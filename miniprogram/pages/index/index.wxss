@@ -121,3 +121,26 @@ page {
   height: auto; /* 可选：设置容器高度为自动，以保持图片比例 */  
   overflow: hidden; /* 可选：隐藏超出容器的图片部分 */  
 }
+
+/* 定义类似超链接的按钮样式 */  
+.hyperlink-button {  
+  display: inline-block;  
+  padding: 10rpx 20rpx; /* 调整内边距 */  
+  margin: 0; /* 移除外边距 */  
+  background-color: transparent; /* 透明背景 */  
+  border: none; /* 无边框 */  
+  color: #007AFF; /* 蓝色字体，类似于超链接的颜色 */  
+  text-decoration: underline; /* 下划线 */  
+  font-size: 26rpx; /* 字体大小 */  
+  line-height: normal; /* 正常行高 */   
+}  
+.circle-avatar {  
+  /* 设置宽高相等以创建正方形容器 */  
+  width: 50px;  
+  height: 50px;  
+  overflow: hidden;  
+  /* 设置边框半径为50%以创建圆形 */  
+  border-radius: 70%;  
+  /* 可选：设置背景颜色以防图像未加载或透明 */  
+  background-color: #eee;  
+}  
