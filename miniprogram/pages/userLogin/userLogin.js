@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgSrc: '/images/1.jpg',
+    imgSrc: '/images/123.png',
+    imgSrc2:'/images/bkg2.jpg',
   },
   userLogin: function() {
     getApp().userLogin();
