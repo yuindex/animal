@@ -96,7 +96,32 @@ Page({
   },
   
   Recognition: function() {  
-    
+    const imgSrc = this.data.imgSrc;
+    if (imgSrc) {  
+      // 调用云函数进行识别  
+      wx.cloud.callFunction({  
+        name: 'Recognize', // 云函数名称  
+        data: {  
+          base64Image: imgSrc // 将图片的 base64 数据传递给云函数  
+        },  
+        success: res => {  
+          console.log('识别结果:', res.result); // 打印云函数返回的识别结果  
+          // 在这里你可以处理识别结果，比如更新页面数据等  
+          this.setData({  
+            recognitionResult: res.result // 假设云函数返回的结果在 res.result 中  
+          });  
+        },  
+        fail: err => {  
+          console.error('调用云函数失败:', err);  
+          // 在这里你可以处理调用失败的情况，比如显示错误信息  
+          wx.showToast({  
+            title: '识别失败，请稍后再试',  
+            icon: 'none',  
+            duration: 2000  
+          });  
+        }  
+      });  
+    }
   },
 
   navigateToHistory: function(){
