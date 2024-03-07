@@ -16,7 +16,8 @@
     "pages/cloudBackend/index",
     "pages/singleTemplate/index",
     "pages/web/index",
-    "pages/index/userHistory/userHistory"
+    "pages/index/userHistory/userHistory",
+    "pages/index/UserSet/UserSet"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -33,4 +34,5 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "lazyCodeLoading": "requiredComponents"
+  
 }

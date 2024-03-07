@@ -95,7 +95,7 @@ Page({
     });
   },
   
-  Recognition: function() {  
+  /* Recognition: function() {  
     const imgSrc = this.data.imgSrc;
     if (imgSrc) {  
       // 调用云函数进行识别  
@@ -122,11 +122,18 @@ Page({
         }  
       });  
     }
-  },
+  }, */
+  Recognition: function() {
 
+  },
   navigateToHistory: function(){
     wx.navigateTo({  
       url: '/pages/index/userHistory/userHistory'
+    });  
+  },
+  navigateToUserset: function(){
+    wx.navigateTo({  
+      url: '/pages/index/UserSet/UserSet'
     });  
   },
   onLoad: function() {  

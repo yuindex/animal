@@ -1,0 +1,37 @@
+/* pages/index/UserSet/UserSet.wxss */
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.container {
+  display: flex;
+}
+.my-text {  
+  font-family: 'MyCustomFont', sans-serif; /* 使用自定义字体，如果加载失败则回退到sans-serif */  
+  font-size: 16px; /* 字体大小 */  
+  color: #333; /* 字体颜色 */  
+  line-height: 1.5; /* 行高 */  
+  text-align: justify; /* 文本对齐方式 */  
+  letter-spacing: 0.5px; /* 字符间距 */  
+}
+
+.weui-input {  
+  width: 750rpx;  
+  height: 63rpx;  
+  display: block;  
+  box-sizing: border-box;  
+  padding: 0 10rpx;  
+  border: 1rpx solid rgb(105, 105, 105); /* 设置边框 */  
+  border-radius: 5rpx; /* 设置圆角 */  
+  background-color: rgb(255, 255, 255); /* 设置背景色 */  
+} 

@@ -1,0 +1,15 @@
+<!--pages/index/UserSet/UserSet.wxml-->
+<view data-weui-theme="{{theme}}">
+  <view class="my-text" style="width: 62rpx; height: 37rpx; display: block; box-sizing: border-box; position: relative; left: 345rpx; top: 46rpx">头像</view>
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button> 
+  <view class="my-text" style="width: 62rpx; height: 37rpx; display: block; box-sizing: border-box; position: relative; left: 21rpx; top: -23rpx">昵称</view>
+  <mp-form>
+    <mp-cells>
+      <mp-cell title="昵称">
+        <input style="width: 750rpx; height: 63rpx; display: block; box-sizing: border-box" type="nickname" class="weui-input" placeholder="请输入昵称"/>
+      </mp-cell>
+    </mp-cells>
+  </mp-form>
+</view>
